@@ -6,9 +6,11 @@ const users = [
 
 users.forEach(u => console.log(u))
 
+
 const emails = users.map(user => user.email)
 console.log(emails)
 
+//βαζω στον νεο filtered πιανακα μονο οσα δινουν true στο callback function
 const activeUsers = users.filter(user => user.isActive)
 console.log(activeUsers)
 
@@ -20,6 +22,7 @@ const cart = [
  const totalSum = cart.reduce((acc, item) => acc + item.price, 0)
  console.log(totalSum) 
 
+ //η find ειναι σαν την filter αλλα επιστρεφει τον user κι οχι πινακα.
  const user = users.find(user => user.email === "alice@aueb.gr")
  const userIndex = users.findIndex(user => user.email === "alice@aueb.gr")
  console.log(user, userIndex)
@@ -35,10 +38,14 @@ const cart = [
   { title: "post3", tags: ["react", "frontend"] }
  ]
 
+//αν κανω απλο map. θα παρω εναν δυσδιαστατο πινακα.
+//αν θελω να μπουν ολα τα tags σε εναν πινακα, χρησιμοποιω flatMap
+
  const allTags = posts.flatMap(post => post.tags)
  console.log(allTags)
 
  const fruits = ["Apples", "Oranges"]
+ //το entries δινει υποπινακες που αποτελουνται απο index , στοιχειο
  for (const [i, fruit] of fruits.entries()) {
   console.log(`Index: ${i}, Fruit: ${fruit}`)
  }
