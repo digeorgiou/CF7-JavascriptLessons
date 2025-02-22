@@ -17,8 +17,6 @@ window.addEventListener('DOMContentLoaded', function(){
 
 
 
-
-
 // let counter = 0;
 
 // const btnDecr = document.getElementById('btnDecr')
